@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'gifs-shearch-box',
   template: `
     <h5>Buscar:</h5>
-    <input type="text" class="form-control" placeholder="Buscar gifs..." />
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Buscar gifs..."
+      (keyup.enter)="searchTag()"
+      #txtTagInput
+    />
   `,
 })
-export class ShearchBoxComponent {}
+export class ShearchBoxComponent {
+  @ViewChild('txtTagInput')
+  public tagInput!: ElementRef<HTMLInputElement>;
+
+  searchTag() {
+
+  const newTag = this.tagInput.nativeElement.value;
+    console.log({ newTag });
+  }
+}
