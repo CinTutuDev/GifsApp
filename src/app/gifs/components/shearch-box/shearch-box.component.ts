@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { GifsService } from '../../services/gifs.service';
 
 @Component({
   selector: 'gifs-shearch-box',
@@ -17,9 +18,15 @@ export class ShearchBoxComponent {
   @ViewChild('txtTagInput')
   public tagInput!: ElementRef<HTMLInputElement>;
 
-  searchTag() {
+  constructor(private gifsS: GifsService) {}
 
-  const newTag = this.tagInput.nativeElement.value;
+  searchTag() {
+    const newTag = this.tagInput.nativeElement.value;
+
+    this.gifsS.searchTag(newTag);
+
+    this.tagInput.nativeElement.value = '';
+
     console.log({ newTag });
   }
 }
