@@ -9,3 +9,7 @@ Ejecutar `ng serve` ó `ng s -o`para un servidor de desarrollo. Navegue a `http:
 ## 🛠 Build
 
 Para construir el proyecto `ng build` to build the project. Se almacenarán en la carpeta  `dist/` directory.
+
+## 🎱 URL Importantes
+### Diseño 👉 :  [Bootstrap](https://getbootstrap.com/) 
+### Hosting GitHub 👉  : [AngularComponentBasic](https://cintutudev.github.io/AngularComponentBasic) 
