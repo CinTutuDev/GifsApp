@@ -11,6 +11,8 @@ export class GifsService {
   }
 
   private organizeHistory(tag: string) {
+    const apiKey: string = '5BuYHsXkXO3GW9k5oFaTlfSR5XiOGODO';
+
     /* Lo pasamos a minusculas */
     tag = tag.toLowerCase();
 
