@@ -1,10 +1,15 @@
 <div class="row">
-  <div class="col-md-3 col-sm-6">
+  <div  *ngFor="let ite of gifs" class="col-md-3 col-sm-6">
     <div class="card mb-2 text-center bg-dark">
-      <!-- TODO: crear imagen -->
+
+      <img
+      [src]="ite.images.downsized_medium.url"
+      [alt]="ite.title"
+       class="card-img-top"
+      srcset="">
 
       <div class="card-body text-white">
-        <p class="card-text">holita mundito loker</p>
+        <p class="card-text">{{ite.title}}</p>
       </div>
     </div>
   </div>
