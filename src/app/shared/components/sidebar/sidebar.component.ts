@@ -18,7 +18,7 @@ export class SidebarComponent {
   searchTag(tag: string) {
     this.gifsS.searchTag(tag);
 
-    this.tagInput.nativeElement.value = '';
+    /* this.tagInput.nativeElement.value = ''; */
 
     console.log({ tag });
   }

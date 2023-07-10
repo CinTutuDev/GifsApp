@@ -4,7 +4,7 @@ import { Gif, SearchResponse } from '../interfaces/gifs.interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class GifsService {
-  public gifList: Gif[]=[];
+  public gifList: Gif[] = [];
   private _tagHistory: string[] = [];
   private apiKey: string = '5BuYHsXkXO3GW9k5oFaTlfSR5XiOGODO';
   private url: string = 'https://api.giphy.com/v1/gifs';
@@ -25,6 +25,13 @@ export class GifsService {
     /* y lo inserto */
     this._tagHistory.unshift(tag);
     this._tagHistory = this.tagsHistory.splice(0, 10);
+    this.SaveLocalStorage();
+  }
+
+  /* LocalStorage--> hacer persistente la información */
+
+  private SaveLocalStorage(): void {
+    localStorage.setItem('history', JSON.stringify(this._tagHistory));
   }
 
   searchTag(tag: string): void {
@@ -36,9 +43,11 @@ export class GifsService {
       .set('limit', '10')
       .set('q', tag);
 
-    this.http.get<SearchResponse>(`${this.url}/search`, { params }).subscribe((res) => {
-      this.gifList = res.data;
-      /* console.log('Gifs: ' , this.gifList); */
-    });
+    this.http
+      .get<SearchResponse>(`${this.url}/search`, { params })
+      .subscribe((res) => {
+        this.gifList = res.data;
+        /* console.log('Gifs: ' , this.gifList); */
+      });
   }
 }
