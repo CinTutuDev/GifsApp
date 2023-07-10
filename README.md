@@ -1,4 +1,5 @@
 # GifsApp
+<img src="https://media.giphy.com/media/24AwucmjT0XisXeFyQ/giphy.gif">
 
 Proyecto hecho con: [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
 
@@ -14,3 +15,5 @@ Para construir el proyecto `ng build` to build the project. Se almacenarán en l
 ### Diseño 👉 :  [Bootstrap](https://getbootstrap.com/) 
 ### Hosting GitHub 👉  : [AngularComponentBasic](https://cintutudev.github.io/AngularComponentBasic) 
 ### GIFS  👉 : [GIPHY](https://developers.giphy.com/) 
+### Loaders  👉 : [SVG](https://samherbert.net/svg-loaders/)
+### Animaciones  👉 : [Animate](https://animate.style/)
