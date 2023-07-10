@@ -11,7 +11,5 @@ export class GifsComponent implements OnInit {
 
   ngOnInit(): void {
     if (!this.gif) throw new Error('Gif property is required');
-
-    throw new Error('Method not implemented.');
   }
 }
